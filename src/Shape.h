@@ -9,6 +9,7 @@ protected:
 
 public:
     virtual void draw() = 0;
+    virtual void print() = 0;
 };
 
 #endif //GRAPHICSPROJECT_SHAPE_H
