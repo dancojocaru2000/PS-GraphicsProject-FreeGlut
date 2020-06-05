@@ -12,7 +12,7 @@ Point::~Point() {
 
 }
 
-double Point::getX() {
+double Point::getX() const {
     return _x;
 }
 
@@ -20,7 +20,7 @@ void Point::setX(double newX) {
     _x = newX;   
 }
 
-double Point::getY() {
+double Point::getY() const {
     return _y;
 }
 
@@ -34,4 +34,16 @@ void Point::setY(double newY) {
 
 void Point::draw() {
     _engine.drawPoint(_x, _y);
+}
+
+#include <iostream>
+
+void Point::print() {
+    std::cout << *this;
+}
+
+std::ostream& operator<<(std::ostream& o, const Point& p) {
+    o << "Point of coordinates X=" << p.getX() << " and Y=" << p.getY() << std::endl;
+
+    return o;
 }

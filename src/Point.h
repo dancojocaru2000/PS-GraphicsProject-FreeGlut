@@ -2,6 +2,7 @@
 #define DC_VECTOR2_H
 
 #include "Shape.h"
+#include <ostream>
 
 class Point : public Shape {
 private:
@@ -13,13 +14,16 @@ public:
     Point(double x, double y);
     ~Point();
 
-    double getX();
+    double getX() const;
     void setX(double newX);
 
-    double getY();
+    double getY() const;
     void setY(double newY);
 
     void draw() override;
+    void print() override;
+
+    friend std::ostream& operator<<(std::ostream& o, const Point& p);
 };
 
 #endif
