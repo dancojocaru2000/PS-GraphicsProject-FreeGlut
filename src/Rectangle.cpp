@@ -46,3 +46,18 @@ void Rectangle::draw() {
         Line(_points[3], _points[0]).draw();
     }
 }
+
+#include <iostream>
+
+void Rectangle::print() {
+    std::cout << *this;
+}
+
+std::ostream& operator<<(std::ostream& o, const Rectangle& r) {
+    o << "Rectangle defined by 4 points:" << std::endl;
+    for (auto & _point : r._points) {
+        o << "  " << _point;
+    }
+
+    return o;
+}

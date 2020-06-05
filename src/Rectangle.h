@@ -3,6 +3,7 @@
 
 #include "Point.h"
 #include "Shape.h"
+#include <ostream>
 
 class Rectangle : public Shape {
 private:
@@ -18,6 +19,9 @@ public:
     static Rectangle empty(Point p1, Point p2, Point p3, Point p4);
 
     void draw() override;
+    void print() override;
+
+    friend std::ostream& operator<<(std::ostream& o, const Rectangle& r);
 };
 
 #endif
