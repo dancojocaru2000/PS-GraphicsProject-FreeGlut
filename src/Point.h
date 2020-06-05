@@ -1,7 +1,9 @@
 #ifndef DC_VECTOR2_H
 #define DC_VECTOR2_H
 
-class Point {
+#include "Shape.h"
+
+class Point : public Shape {
 private:
     double _x;
     double _y;
@@ -17,7 +19,7 @@ public:
     double getY();
     void setY(double newY);
 
-    void draw();
+    void draw() override;
 };
 
 #endif

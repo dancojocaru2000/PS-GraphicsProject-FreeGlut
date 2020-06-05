@@ -33,7 +33,5 @@ void Point::setY(double newY) {
 #include "EngineGlut.h"
 
 void Point::draw() {
-    EngineGlut e;
-
-    e.drawPoint(_x, _y);
+    _engine.drawPoint(_x, _y);
 }

@@ -2,8 +2,9 @@
 #define DC_RECTANGLE_H
 
 #include "Point.h"
+#include "Shape.h"
 
-class Rectangle {
+class Rectangle : public Shape {
 private:
     Point _points[4];
     bool _filled;
@@ -16,7 +17,7 @@ public:
     static Rectangle filled(Point p1, Point p2, Point p3, Point p4);
     static Rectangle empty(Point p1, Point p2, Point p3, Point p4);
 
-    void draw();
+    void draw() override;
 };
 
 #endif

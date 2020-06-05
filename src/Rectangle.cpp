@@ -27,15 +27,13 @@ Rectangle Rectangle::empty(Point p1, Point p2, Point p3, Point p4) {
 #include "Line.h"
 
 void Rectangle::draw() {
-    EngineGlut e;
-
     if (_filled) {
-        e.drawSurface(
+        _engine.drawSurface(
             _points[0].getX(), _points[0].getY(),
             _points[1].getX(), _points[1].getY(),
             _points[2].getX(), _points[2].getY()
         );
-        e.drawSurface(
+        _engine.drawSurface(
             _points[0].getX(), _points[0].getY(),
             _points[3].getX(), _points[3].getY(),
             _points[2].getX(), _points[2].getY()

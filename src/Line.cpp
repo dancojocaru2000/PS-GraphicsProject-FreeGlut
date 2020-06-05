@@ -16,9 +16,7 @@ Line::~Line() {
 #include "EngineGlut.h"
 
 void Line::draw() {
-    EngineGlut e;
-
-    e.drawLine(
+    _engine.drawLine(
         _points[0].getX(), _points[0].getY(),
         _points[1].getX(), _points[1].getY()
     );
