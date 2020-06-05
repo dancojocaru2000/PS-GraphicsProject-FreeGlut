@@ -87,3 +87,15 @@ void Airplane::draw() {
         _rectangle.draw();
     }
 }
+
+#include <iostream>
+
+void Airplane::print() {
+    std::cout << *this;
+}
+
+std::ostream& operator<<(std::ostream& o, const Airplane& a) {
+    o << "Airplane." << std::cout;
+
+    return o;
+}

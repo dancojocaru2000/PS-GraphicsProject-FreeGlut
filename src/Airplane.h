@@ -5,6 +5,7 @@
 #include "Triangle.h"
 #include "Rectangle.h"
 #include "Shape.h"
+#include <ostream>
 
 class Airplane : public Shape {
 private:
@@ -17,6 +18,9 @@ public:
     Airplane(Point bottomLeftCorner, int width, int height);
 
     void draw() override;
+    void print() override;
+
+    friend std::ostream& operator<<(std::ostream& o, const Airplane& a);
 };
 
 #endif //GRAPHICSPROJECT_AIRPLANE_H
