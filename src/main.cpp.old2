@@ -26,10 +26,10 @@ void testTriangle() {
     Triangle t1;
     t1.draw();
 
-    Triangle t2 = Triangle::empty( {75, 75}, {75, 50}, {50, 75} );
+    auto t2 = Triangle::empty( {75, 75}, {75, 50}, {50, 75} );
     t2.draw();
 
-    Triangle t3 = Triangle::filled( {-75, -75}, {-75, -50}, {-50, -75} );
+    auto t3 = Triangle::filled( {-75, -75}, {-75, -50}, {-50, -75} );
     t3.draw();
 }
 
@@ -37,19 +37,19 @@ void testRectangle() {
     Rectangle r1;
     r1.draw();
 
-    Rectangle r2 = Rectangle::empty( {100, 100}, {-100, 100}, {-100, -100}, {100, -100} );
+    auto r2 = Rectangle::empty( {100, 100}, {-100, 100}, {-100, -100}, {100, -100} );
     r2.draw();
 
-    Rectangle r21 = Rectangle::filled( {100, 100}, {100+25, 100}, {100+25, 100+25}, {100, 100+25} );
+    auto r21 = Rectangle::filled( {100, 100}, {100+50, 100}, {100+50, 100+50}, {100, 100+50} );
     r21.draw();
 
-    Rectangle r22 = Rectangle::filled( {100, -100}, {100+25, -100}, {100+25, -100-25}, {100, -100-25} );
+    auto r22 = Rectangle::filled( {100, -100}, {100+50, -100}, {100+50, -100-50}, {100, -100-50} );
     r22.draw();
 
-    Rectangle r23 = Rectangle::filled( {-100, -100}, {-100-25, -100}, {-100-25, -100-25}, {-100, -100-25} );
+    auto r23 = Rectangle::filled( {-100, -100}, {-100-50, -100}, {-100-50, -100-50}, {-100, -100-50} );
     r23.draw();
 
-    Rectangle r24 = Rectangle::filled( {-100, 100}, {-100-25, 100}, {-100-25, 100+25}, {-100, 100+25} );
+    auto r24 = Rectangle::filled( {-100, 100}, {-100-50, 100}, {-100-50, 100+50}, {-100, 100+50} );
     r24.draw();
 }
 
