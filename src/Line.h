@@ -3,6 +3,7 @@
 
 #include "Point.h"
 #include "Shape.h"
+#include <ostream>
 
 class Line : public Shape {
 private:
