@@ -21,3 +21,17 @@ void Line::draw() {
         _points[1].getX(), _points[1].getY()
     );
 }
+
+#include <iostream>
+
+void Line::print() {
+    std::cout << *this;
+}
+
+std::ostream& operator<<(std::ostream& o, const Line& l) {
+    o << "Line defined by two points:" << std::endl;
+    o << "  " << l._points[0];
+    o << "  " << l._points[1];
+
+    return o;
+}

@@ -14,6 +14,9 @@ public:
     ~Line();
 
     void draw() override;
+    void print() override;
+
+    friend std::ostream& operator<<(std::ostream& o, const Line& l);
 };
 
 #endif
