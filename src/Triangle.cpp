@@ -39,3 +39,18 @@ void Triangle::draw() {
         Line(_points[2], _points[0]).draw();
     }
 }
+
+#include <iostream>
+
+void Triangle::print() {
+    std::cout << *this;
+}
+
+std::ostream& operator<<(std::ostream& o, const Triangle& t) {
+    o << "Triangle defined by 3 points:" << std::endl;
+    o << "  " << t._points[0];
+    o << "  " << t._points[1];
+    o << "  " << t._points[2];
+
+    return 0;
+}

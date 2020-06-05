@@ -3,6 +3,7 @@
 
 #include "Point.h"
 #include "Shape.h"
+#include <ostream>
 
 class Triangle : public Shape {
 private:
@@ -18,6 +19,9 @@ public:
     static Triangle empty(Point p1, Point p2, Point p3);
 
     void draw() override;
+    void print() override;
+
+    friend std::ostream& operator<<(std::ostream& o, const Triangle& t);
 };
 
 #endif
