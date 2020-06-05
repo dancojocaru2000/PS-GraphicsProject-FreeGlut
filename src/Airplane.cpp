@@ -95,7 +95,7 @@ void Airplane::print() {
 }
 
 std::ostream& operator<<(std::ostream& o, const Airplane& a) {
-    o << "Airplane." << std::cout;
+    o << "Airplane." << std::endl;
 
     return o;
 }

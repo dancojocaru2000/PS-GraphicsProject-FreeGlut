@@ -52,5 +52,5 @@ std::ostream& operator<<(std::ostream& o, const Triangle& t) {
     o << "  " << t._points[1];
     o << "  " << t._points[2];
 
-    return 0;
+    return o;
 }
