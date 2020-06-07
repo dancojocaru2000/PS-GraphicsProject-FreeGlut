@@ -11,6 +11,12 @@
 
 Run the `build_and_run.sh` file.
 
+If you don't want colours or emojis displayed in the terminal, set the NO_COLOR environment variable to something (for example, to `1`):
+
+```bash
+env NO_COLOR=1 ./build_and_run.sh
+```
+
 ---
 
 Dan Cojocaru  
