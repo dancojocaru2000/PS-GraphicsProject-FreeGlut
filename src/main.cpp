@@ -1,16 +1,39 @@
 #include <iostream>
 #include "EngineGlut.h"
 
-#include "Point.h"
-#include "Line.h"
-#include "Triangle.h"
 #include "Rectangle.h"
 #include "Airplane.h"
+#include "Robot.h"
 
 int main() {
     initEngineGlut(0, nullptr);
 
-    Airplane({-50, -100}, 100, 200).draw();
+    int width = 300;
+    int height = 400;
+
+    Airplane(
+            {-width, -(height/2)},
+            width,
+            height
+    ).draw();
+
+    Rectangle::empty(
+        {-width, -(height/2)},
+        {0, -(height/2)},
+        {0, (height/2)},
+        {-width, (height/2)}).draw();
+
+    Robot(
+        {0, -(height/2)},
+        width,
+        height
+    ).draw();
+
+    Rectangle::empty(
+        {0, -(height/2)},
+        {width, -(height/2)},
+        {width, (height/2)},
+        {0, (height/2)}).draw();
 
     std::cin.ignore();
 
