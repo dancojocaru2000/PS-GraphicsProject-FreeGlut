@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./build.sh && ./run.sh
+./clean.sh && echo "" && ./build.sh release && echo "" && ./run.sh

@@ -10,6 +10,22 @@ then
   NOCOLOR=1
 fi
 
+# CHECKMARK_SYMBOL="✔️"
+# CROSS_SYMBOL="❌"
+
+CHECKMARK_SYMBOL="✓"
+CROSS_SYMBOL="❌"
+
+if [ $NOCOLOR -eq 0 ]
+then
+  GREEN_COLOR_ANSI="\0033[32m"
+  RED_COLOR_ANSI="\0033[31m"
+  STOP_COLOR_ANSI="\0033[39m"
+
+  CHECKMARK_SYMBOL="$GREEN_COLOR_ANSI$CHECKMARK_SYMBOL$STOP_COLOR_ANSI"
+  CROSS_SYMBOL="$RED_COLOR_ANSI$CROSS_SYMBOL$STOP_COLOR_ANSI"
+fi
+
 if [ "$EXECUTABLE_NAME" == "" ]
 then
   EXECUTABLE_NAME="program.lexe"
@@ -27,7 +43,7 @@ then
 else
   if [ $NOCOLOR -eq 0 ]
   then
-    echo -n "❌ "
+    echo -e -n "$CROSS_SYMBOL "
   fi
   echo "Pass either debug or release as the first parameter"
   exit 1
@@ -76,7 +92,7 @@ do
     then
       if [ $NOCOLOR -eq 0 ]
       then
-        echo " ❌"
+        echo -e " $CROSS_SYMBOL"
       else
         echo ""
       fi
@@ -85,7 +101,7 @@ do
       exit $ERR
     elif [ $NOCOLOR -eq 0 ]
     then
-      echo " ✔️"
+      echo -e " $CHECKMARK_SYMBOL"
     fi
   fi
 
@@ -114,11 +130,13 @@ if [ $FIRST_FILE -eq 1 ]
 then
   if [ $NOCOLOR -eq 0 ]
   then
-    echo -n "❌ "
+    echo -e -n "$CROSS_SYMBOL "
   fi
   echo "No .cpp files in src"
   exit 1
 fi
+
+echo ""
 
 LINK_FILES=""
 for TO_LINK in obj/*.o
@@ -140,7 +158,6 @@ then
     exit $ERR
   fi
 
-  echo ""
   echo "Created executable out/$EXECUTABLE_NAME"
 fi
 
